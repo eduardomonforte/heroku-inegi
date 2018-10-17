@@ -1,13 +1,15 @@
 'use strict';
 
 const axios = require("axios");
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const express = require('express');
 const app = express();
 const port = process.env.PORT;
 
-app.use( bodyParser.json() );// to support JSON-encoded bodies
-app.use(bodyParser.urlencoded({// to support URL-encoded bodies
+app.use(cors());
+app.use( bodyParser.json() );
+app.use(bodyParser.urlencoded({
   extended: true
 }));
 
@@ -57,28 +59,3 @@ app.post('/combustible', (req, res) => {
 });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
-
-
-
-
-/*
-
-
-
-
-
-function fuel() {
-  $.ajax({
-    url: "http://gaia.inegi.org.mx/sakbe_v3.1/combustible",
-    method: "POST",
-    data: {
-      key: "rZMkTZuI-ugbU-t1Y5-zCHg-0ZOETYT3r0HG",
-      type: "json",
-      proj: "GRS80"
-    }
-  }).done(function (response) {
-    console.log(response);
-  });
-}
-
-*/

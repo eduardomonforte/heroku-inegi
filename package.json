@@ -1,5 +1,5 @@
 {
-  "name": "inegi_express",
+  "name": "inegi-express",
   "version": "1.0.0",
   "description": "inegi request",
   "main": "server.js",
